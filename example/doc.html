@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>jquery.vflick example</title>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/simplex/bootstrap.min.css" />
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" />
+<link rel="stylesheet" href="css/main.css" />
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script src="js/jquery.vflick.min.js"></script>
+<!-- use SyntaxHighlighter -->
+<script type="text/javascript" src="js/sh/shCore.js"></script>
+<script type="text/javascript" src="js/sh/shBrushXml.js"></script>
+<script type="text/javascript" src="js/sh/shBrushSass.js"></script>
+<script type="text/javascript" src="js/sh/shBrushJScript.js"></script>
+<link rel="stylesheet" href="css/sh/shCore.css" />
+<link rel="stylesheet" href="css/sh/shThemeEmacs.css" />
+<script type="text/javascript">
+SyntaxHighlighter.config.stripBrs=true;
+SyntaxHighlighter.config.tagName="textarea";
+SyntaxHighlighter.config.bloggerMode=true;
+SyntaxHighlighter.all();
+</script>
+</head>
+<body id="doc">
+
+<div class="jumbotron text-center">
+	<h1>jquery.vflick</h1>
+	<p>jquery library for SP flick</p>
+	<p>
+		<a href="https://github.com/gorbachov/jquery.vflick/zipball/master" class="btn btn-info" role="button"><i class="fa fa-download"></i> Download .zip</a>
+		<a href="https://github.com/gorbachov/jquery.vflick/tarball/master" class="btn btn-info" role="button"><i class="fa fa-download"></i> Download .tar.gz</a>
+		<a href="https://github.com/gorbachov/jquery.vflick" class="btn btn-info" role="button"><i class="fa fa-github"></i> View on GitHub</a>
+	</p>
+	<div class="btn-group text-center">
+		<a href="index.html" class="btn btn-default">Getting Started</a>
+		<a href="doc.html" class="btn btn-default active">Document</a>
+		<a href="demo.html" class="btn btn-default">Demo</a>
+	</div>
+</div>
+<div class="container">
+	<div class="page-header">
+		<h2>Dcument <small>For a more detailed setting</small></h2>
+	</div>
+	<h3>Setting Options</h3>
+	<textarea class="brush: js;">
+		$('.vflick').vflick({
+			[key]:[value],
+			[key]:[value]
+		});</textarea>
+	<p>form of hash in the argument of vflick method.</p>
+	
+	<h3>Options</h3>
+	<table class="table table-bordered table-striped">
+		<tr>
+			<th>key</th>
+			<th>default</th>
+			<th>type</th>
+			<th></th>
+		</tr>
+		<tr>
+			<td>verticalFlick</td>
+			<td>false</td>
+			<td>boolean</td>
+			<td><strong>horizontal</strong> or <strong>vertical</strong> flick setting</td>
+		</tr>
+		<tr>
+			<td>flickClass</td>
+			<td>.flick</td>
+			<td>string</td>
+			<td>class name of each flick elements.</td>
+		</tr>
+		<tr>
+			<td>transitionSpeed</td>
+			<td>350</td>
+			<td>number</td>
+			<td>transition speed of flick animation.</td>
+		</tr>
+		<tr>
+			<td>transitionTiming</td>
+			<td>cubic-bezier(0, 0, 0.25, 1)</td>
+			<td>string</td>
+			<td>
+				transition timing of flick animation.<br />
+				ex) ease-out, ease-in, etc..
+			</td>
+		</tr>
+		<tr>
+			<td>fsEndAnim</td>
+			<td>function(){}</td>
+			<td>function</td>
+			<td>
+				callback function of finish at flick animation.<br />
+				<strong>current page number is returned to the argument.</strong>
+			</td>
+		</tr>
+	</table>
+	
+	<h3>methods</h3>
+	<h4>goNext</h4>
+	<p>method to advance the next page</p>
+	<textarea class="brush: js;">
+		var $vflick = $('.vflick').vflick();
+		$vflick.goNext();</textarea>
+	
+	<h4>goPrev</h4>
+	<p>method to return the prev page</p>
+	<textarea class="brush: js;">
+		var $vflick = $('.vflick').vflick();
+		$vflick.goPrev();</textarea>
+</div><!-- //container -->
+<hr />
+<footer class="text-center">
+	<p>jquery.vflick maintained by <a href="https://github.com/gorbachov">gorbachov</a></p>
+</footer>
+</body>
+</html>

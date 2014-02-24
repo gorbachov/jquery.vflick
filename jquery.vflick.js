@@ -102,7 +102,7 @@
 			if(dg){
 				e.preventDefault();
 				pos.client.x = (support.touch)?e.originalEvent.changedTouches[0].pageX:e.clientX;
-				pos.client.y = (support.touch)?e.originalEvent.changedTouches[0].pageY:e.clientY;
+				pos.client.y = (support.touch)?e.originalEvent.changedTouches[0].pageY:e.clientY - flick.size[flick.direction.vol];
 				pos.dist = ((flick.pos[flick.direction.loc] + flick.size[flick.direction.vol]) - pos.client[flick.direction.loc])*-1 - pos.offset[flick.direction.loc];
 				// console.log(
 					// flick.pos[flick.direction.loc],
@@ -168,8 +168,14 @@
 		/*
 		 * init
 		 */
-		$(elm).find(opt.flickClass).last().insertBefore($(elm).find(opt.flickClass).first());
 		pos.length = $(elm).find(opt.flickClass).size();
+		if(pos.length < 2){
+			return;//not working
+		}else if(pos.length < 3){
+			$(elm).find(opt.flickClass).eq(0).clone(true).insertAfter($(elm).find(opt.flickClass).last());
+			$(elm).find(opt.flickClass).eq(1).clone(true).insertAfter($(elm).find(opt.flickClass).last());
+		}
+		$(elm).find(opt.flickClass).last().insertBefore($(elm).find(opt.flickClass).first());
 		//forking vertical or horizontal
 		if(opt.verticalFlick){
 			$(elm).attr({style:support.venders.prefix[support.vendor] + 'transform: translate3d(0, -' + flick.size[flick.direction.vol] + 'px, 0);'});

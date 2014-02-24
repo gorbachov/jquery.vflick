@@ -42,9 +42,12 @@ module.exports = function(grunt){
 				},
 			}
 		},
+		compass:{
+			dev:{}
+		},
 		watch:{
-			files:['*.js'],
-			tasks:['jshint','uglify']
+			files:['example/sass/*.scss','*.js'],
+			tasks:['compass:dev','jshint','uglify']
 		},
 		'http-server':{
 			'dev':{
@@ -60,6 +63,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-compass');
 	grunt.loadNpmTasks('grunt-http-server');
 	//エイリアスタスクの定義(開発用)
 	//grunt.registerTask('default',['jshint','concat','uglify','watch.development']);
