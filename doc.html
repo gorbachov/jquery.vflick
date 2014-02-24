@@ -26,7 +26,7 @@ SyntaxHighlighter.config.bloggerMode=true;
 SyntaxHighlighter.all();
 </script>
 </head>
-<body id="index">
+<body id="doc">
 
 <div class="jumbotron text-center">
 	<h1>jquery.vflick</h1>
@@ -37,93 +37,81 @@ SyntaxHighlighter.all();
 		<a href="https://github.com/gorbachov/jquery.vflick" class="btn btn-info" role="button"><i class="fa fa-github"></i> View on GitHub</a>
 	</p>
 	<div class="btn-group text-center">
-		<a href="index.html" class="btn btn-default active">Getting Started</a>
-		<a href="doc.html" class="btn btn-default">Document</a>
+		<a href="index.html" class="btn btn-default">Getting Started</a>
+		<a href="doc.html" class="btn btn-default active">Document</a>
 		<a href="demo.html" class="btn btn-default">Demo</a>
 	</div>
 </div>
 <div class="container">
 	<div class="page-header">
-		<h2>Getting Started <small>To eash installation from download</small></h2>
+		<h2>Dcument <small>For a more detailed setting</small></h2>
 	</div>
-	<h3>01.load jQuery and jquey.vflick.js</h3>
-	<textarea class="brush: html;">
-		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-		<script src="js/jquery.vflick.min.js"></script></textarea>
-	<p>
-		Load the jquery, and load the jquery.vflick.js then.<br />
-		jquery.vflick.js download from below.<br />
-	</p>
-	<ul>
-		<li><a href="http://gorbachov.github.io/jquery.vflick/js/jquery.vflick.js">Download Uncompressed</a></li>
-		<li><a href="http://gorbachov.github.io/jquery.vflick/js/jquery.vflick.min.js">Download Compressed</a></li>
-	</ul>
-	
-	<h3>02.construct html</h3>
-	<textarea class="brush: html;">
-		<div class="vflick-wrapper">
-			<div class="vflick">
-				<div class="flick"><p>1</p></div>
-				<div class="flick"><p>2</p></div>
-				<div class="flick"><p>3</p></div>
-			</div>
-		</div></textarea>
-	<ol>
-		<li>write wrap element <strong>.vflick-wrapper</strong></li>
-		<li>write flickable element <strong>.vflick</strong></li>
-		<li>write each flick content <strong>.flick</strong></li>
-	</ol>
-	
-	<h3>03.decorated with css</h3>
-	<textarea class="brush: sass;">
-		.vflick-wrapper{
-			width:300px;
-			overflow:hidden;
-		}
-		.vflick{
-			width:900px; //.flick width * .flick num (300 x 3)
-			@include display-box;
-		}
-		.flick{
-			@include box-flex(1);
-			width:300px;
-			height:300px;
-		}</textarea>
-	<ol>
-		<li>width of a wrap element is displayed. and must be set <strong class="text-primary">overflow:hidden;</strong></li>
-		<li>width of the flickable element is the sum of the child element.</li>
-		<li>each child element must be set float layout or box layout.</li>
-	</ol>
-	
-	<h3>04.initialize in javascript</h3>
+	<h3>Setting Options</h3>
 	<textarea class="brush: js;">
-		;(function($){
-			$(function(){
-				$('.vflick').vflick();
-			});
-		})(jQuery);</textarea>
-	<ul>
-		<li>run the <strong class="text-primary">vflick()</strong> method on jQuery object.</li>
-	</ul>
+		$('.vflick').vflick({
+			[key]:[value],
+			[key]:[value]
+		});</textarea>
+	<p>form of hash in the argument of vflick method.</p>
 	
-	<h3>05.flick</h3>
-<script type="text/javascript">
-;(function($){
-$(function(){
-$('.vflick').vflick();
-});
-})(jQuery);
-</script>
-	<div class="vflick-wrapper">
-		<div class="vflick">
-			<div class="flick"><p>1</p></div>
-			<div class="flick"><p>2</p></div>
-			<div class="flick"><p>3</p></div>
-		</div>
-	</div>
-	<ul>
-		<li>variety of other settings <a href="demo.html">here</a></li>
-	</ul>
+	<h3>Options</h3>
+	<table class="table table-bordered table-striped">
+		<tr>
+			<th>key</th>
+			<th>default</th>
+			<th>type</th>
+			<th></th>
+		</tr>
+		<tr>
+			<td>verticalFlick</td>
+			<td>false</td>
+			<td>boolean</td>
+			<td><strong>horizontal</strong> or <strong>vertical</strong> flick setting</td>
+		</tr>
+		<tr>
+			<td>flickClass</td>
+			<td>.flick</td>
+			<td>string</td>
+			<td>class name of each flick elements.</td>
+		</tr>
+		<tr>
+			<td>transitionSpeed</td>
+			<td>350</td>
+			<td>number</td>
+			<td>transition speed of flick animation.</td>
+		</tr>
+		<tr>
+			<td>transitionTiming</td>
+			<td>cubic-bezier(0, 0, 0.25, 1)</td>
+			<td>string</td>
+			<td>
+				transition timing of flick animation.<br />
+				ex) ease-out, ease-in, etc..
+			</td>
+		</tr>
+		<tr>
+			<td>fsEndAnim</td>
+			<td>function(){}</td>
+			<td>function</td>
+			<td>
+				callback function of finish at flick animation.<br />
+				<strong>current page number is returned to the argument.</strong>
+			</td>
+		</tr>
+	</table>
+	
+	<h3>methods</h3>
+	<h4>goNext</h4>
+	<p>method to advance the next page</p>
+	<textarea class="brush: js;">
+		var $vflick = $('.vflick').vflick();
+		$vflick.goNext();</textarea>
+	
+	<h4>goPrev</h4>
+	<p>method to return the prev page</p>
+	<textarea class="brush: js;">
+		var $vflick = $('.vflick').vflick();
+		$vflick.goPrev();</textarea>
 </div><!-- //container -->
 <hr />
 <footer class="text-center">
