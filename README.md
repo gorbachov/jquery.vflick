@@ -21,7 +21,7 @@ jquery library for SP flick
 </div>
 ```
 
-### 03.decorated with css
+### 03.decorated with css(scss)
 ```scss(compass)
 .vflick-wrapper{
     width:300px;
