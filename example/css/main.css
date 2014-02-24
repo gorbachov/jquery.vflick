@@ -23,6 +23,33 @@
   text-align: center;
   font-size: 70px;
 }
+@media (max-width: 400px) {
+  #index .vflick-wrapper {
+    width: 200px;
+    margin: 0 auto 40px;
+    overflow: hidden;
+  }
+  #index .vflick-wrapper .vflick {
+    width: 600px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-box;
+    display: box;
+  }
+  #index .vflick-wrapper .vflick .flick {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -ms-box-flex: 1;
+    box-flex: 1;
+    width: 200px;
+  }
+  #index .vflick-wrapper .vflick .flick p {
+    background: #eee;
+    line-height: 200px;
+    text-align: center;
+    font-size: 70px;
+  }
+}
 
 #demo .demo-carousel .carousel-wrapper {
   width: 300px;
@@ -36,14 +63,14 @@
   display: -ms-box;
   display: box;
 }
-#demo .demo-carousel .carousel-wrapper .vflick .flick {
+#demo .demo-carousel .carousel-wrapper .vflick .photo {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -ms-box-flex: 1;
   box-flex: 1;
   width: 300px;
 }
-#demo .demo-carousel .carousel-wrapper .vflick .flick p img {
+#demo .demo-carousel .carousel-wrapper .vflick .photo p img {
   width: 300px;
 }
 #demo .demo-carousel .controls {
@@ -99,4 +126,74 @@
 }
 #demo .demo-vertical .result {
   font-size: 30px;
+}
+@media (max-width: 400px) {
+  #demo .demo-carousel .carousel-wrapper {
+    width: 200px;
+    margin: 20px auto;
+    overflow: hidden;
+  }
+  #demo .demo-carousel .carousel-wrapper .vflick {
+    width: 600px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-box;
+    display: box;
+  }
+  #demo .demo-carousel .carousel-wrapper .vflick .photo {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -ms-box-flex: 1;
+    box-flex: 1;
+    width: 200px;
+  }
+  #demo .demo-carousel .carousel-wrapper .vflick .photo p img {
+    width: 200px;
+  }
+  #demo .demo-vertical .slot-wrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-box;
+    display: box;
+    width: 202px;
+    margin: 20px auto;
+  }
+  #demo .demo-vertical .slot-wrapper .slot-set {
+    width: 50px;
+  }
+  #demo .demo-vertical .slot-wrapper .slot-set .vertical-wrapper {
+    width: 50px;
+    height: 102px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #ddd;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #eeeeee));
+    background-image: -webkit-linear-gradient(#ffffff, #eeeeee);
+    background-image: -moz-linear-gradient(#ffffff, #eeeeee);
+    background-image: -o-linear-gradient(#ffffff, #eeeeee);
+    background-image: linear-gradient(#ffffff, #eeeeee);
+    overflow: hidden;
+  }
+  #demo .demo-vertical .slot-wrapper .slot-set .vertical-wrapper .vflick .flick {
+    width: 50px;
+    height: 100px;
+  }
+  #demo .demo-vertical .slot-wrapper .slot-set .vertical-wrapper .vflick .flick p {
+    line-height: 100px;
+    font-size: 50px;
+    text-align: center;
+    text-shadow: -1px -1px 1px #ccc;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #fff;
+  }
+}
+
+@media (max-width: 400px) {
+  .jumbotron {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .jumbotron p .btn {
+    display: block;
+    margin: 0 10px 5px;
+  }
 }
