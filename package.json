@@ -1,6 +1,6 @@
 {
   "name": "jquery.vflick",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "jquery library for SP flick",
   "main": "index.js",
   "scripts": {
