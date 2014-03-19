@@ -23,7 +23,7 @@ module.exports = function(grunt){
 			},
 			options:{
 				banner: '<%= banner %>',
-				mangle:true,
+				mangle:false,
 				compress:true
 			}
 		},
